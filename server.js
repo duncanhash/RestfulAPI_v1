@@ -38,9 +38,9 @@ const server=http.createServer((req,res)=>{
                     res.writeHead(200,{'content-Type':'application/json'})
                     res.end(JSON.stringify({message:'authentication successful!'}))
                 }else{
-                    res.writeHead(401,{'content-type':'application/json'})
+
+                }                    res.writeHead(401,{'content-type':'application/json'})
                     res.end(JSON.stringify({error:"incorrect password"}))
-                }
             }catch(error){
                 res.end("bad request: invalid json layout payload")
             }
