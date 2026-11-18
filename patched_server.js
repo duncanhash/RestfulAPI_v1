@@ -26,6 +26,8 @@ const server=http.createServer((req,res)=>{
     req.on('end', ()=>{
         try{
             const credetials=JSON.parse(bodytext)
+
+            setTimeout(()=>{
             const founduser=realuser.find(user=>user.username === credetials.username)
 
             if(!founduser){
@@ -35,7 +37,7 @@ const server=http.createServer((req,res)=>{
 
             }
 
-            setTimeout(()=>{
+            
             const submittedpass=hashedpass(credetials.password)
 
             if (submittedpass=== founduser.password){
